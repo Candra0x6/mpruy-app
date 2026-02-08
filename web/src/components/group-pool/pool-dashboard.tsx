@@ -1,3 +1,12 @@
+/**
+ * #file:group-pool
+ * PoolDashboard Component
+ * 
+ * Displays an overview of all group pools with their key information.
+ * Shows pool names, member counts, and balances in a grid layout.
+ * Handles pool loading states and provides pool selection functionality.
+ */
+
 'use client'
 
 import { useEffect, useState } from 'react'
