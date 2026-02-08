@@ -1,3 +1,12 @@
+/**
+ * #file:multi-sig
+ * PendingTransactions Component
+ * 
+ * Displays pending multi-sig wallet transactions awaiting confirmation.
+ * Shows confirmation progress, allows confirmation/execution of transactions,
+ * and handles transaction selection for detailed review.
+ */
+
 'use client'
 
 import { useEffect, useState } from 'react'
