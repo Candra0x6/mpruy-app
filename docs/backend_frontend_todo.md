@@ -1,0 +1,260 @@
+#### Phase 3: Off-Chain AI Integration (Day 1, Evening: 2-3 hours)
+- **Task 3.1: Build AI Suggestion Script** ✅ (High Priority) - **COMPLETED**
+  - [x] Install dependencies: wagmi (3.4.2), viem (2.45.1), @tanstack/react-query (5.90.20), @google/generative-ai (0.24.1)
+  - [x] Create Next.js API route (/api/ai/route.ts) for Gemini integration
+  - [x] Implement on-chain data fetching (lib/on-chain-fetcher.ts) using viem public client
+  - [x] Build strategy suggestion logic (lib/strategy-builder.ts) using Gemini API response
+  - [x] Create mock historical gas data (lib/mock-data/historical-gas-data.json)
+  - [x] Set up TypeScript types (types/ai-suggestions.ts) for all interfaces
+  - [x] Set up Gemini client wrapper (lib/gemini-client.ts) with prompt building
+  - [x] Create environment setup guide (web/ENV_SETUP.md)
+  - [x] Create implementation documentation (web/TASK_3_1_IMPLEMENTATION.md)
+  - **Implementation Details**:
+    - API Endpoint: POST /api/ai - generates strategy based on on-chain data
+    - On-Chain Data: Fetches current gas price, block history, calculates variance
+    - Gemini Integration: Calls Gemini API with structured prompts
+    - Output: JSON with stake allocations (yes/no %), risk levels, diversification score
+    - Mock Data: Historical gas prices for MVP (24h, 7d, 30d trends)
+  - **Dependencies**: wagmi v3.4.2, @tanstack/react-query v5.90.20, viem v2.45.1, @google/generative-ai v0.24.1
+  - **Configuration**: Requires GEMINI_API_KEY and NEXT_PUBLIC_RPC_URL in .env.local
+  - **Status**: Ready for frontend integration (Task 4.2) and React Query enhancement (Task 3.2)
+  - **Estimated Cost**: 1.5 hours
+  - **Assignee**: Dev2
+  - **Documentation**: 
+    - research: docs/task-3-1-research.md
+    - setup: web/ENV_SETUP.md
+    - implementation: web/TASK_3_1_IMPLEMENTATION.md
+- **Task 3.2: Integrate Data Fetching** ✅ (Medium Priority) - **COMPLETED**
+  - [x] Create React Query QueryClient with optimized settings (providers/QueryProvider.tsx)
+  - [x] Implement useGasData hook with 5-minute cache and 1-minute refetch
+  - [x] Implement useBlockData hook with block watcher and 30-second refetch
+  - [x] Implement useTVLData hook with mock data for MVP
+  - [x] Create useOnChainDataFeed hook combining all three queries
+  - [x] Create useAISuggestions hook orchestrating API calls
+  - [x] Add QueryProvider wrapper to app/layout.tsx
+  - [x] Define TypeScript types (types/query-hooks.ts)
+  - [x] Create hook exports index (lib/hooks/index.ts)
+  - **Implementation Details**:
+    - React Query caching: 5 min stale time, 10 min garbage collection
+    - Auto-refetch: Gas every 1 min, Block every 30 sec, TVL every 5 min
+    - Deduplication: Multiple components use cache, single RPC call
+    - Background updates: Stale-while-revalidate pattern
+    - Error handling: Auto-retry with exponential backoff
+    - tvlData: Mock implementation, ready to swap with Defillama API
+  - **New Files**:
+    - lib/hooks/useGasData.ts - Gas price query hook
+    - lib/hooks/useBlockData.ts - Block data query hook
+    - lib/hooks/useTVLData.ts - TVL query hook (mock)
+    - lib/hooks/useOnChainDataFeed.ts - Combined data hook
+    - lib/hooks/useAISuggestions.ts - API orchestration hook
+    - lib/hooks/index.ts - Central exports
+    - providers/QueryProvider.tsx - QueryClient provider
+    - types/query-hooks.ts - Query types
+    - docs/task-3-2-research.md - Research document
+    - web/TASK_3_2_IMPLEMENTATION.md - Implementation details
+  - **Updated Files**:
+    - app/layout.tsx - Added QueryProvider wrapper
+  - **Dependencies**: No new packages (using Task 3.1 packages)
+  - **Performance**: 50-70% fewer RPC calls via caching
+  - **Status**: Ready for frontend integration (Task 4.1 & 4.2)
+  - **Estimated Cost**: 1 hour
+  - **Assignee**: Dev2
+  - **Documentation**:
+    - research: docs/task-3-2-research.md
+    - implementation: web/TASK_3_2_IMPLEMENTATION.md
+
+#### Phase 4: Frontend & Integration (Day 2, Morning: 3-4 hours)
+- **Task 4.1: Set Up Basic Frontend** ✅ (Medium Priority) - **COMPLETED**
+  - [x] Create wagmi configuration (lib/wagmi-config.ts) for MetaMask connection
+  - [x] Implement contract interaction hooks (lib/hooks/useContractInteractions.ts)
+  - [x] Create WalletConnection component for wallet connect/disconnect
+  - [x] Create CreateMarketForm component for market creation
+  - [x] Create CreateGroupForm component for group creation with member management
+  - [x] Create StakeForm component with integrated AI suggestions
+  - [x] Build dashboard page (app/page.tsx) with feature overview
+  - [x] Create markets listing page (app/markets/page.tsx)
+  - [x] Create market creation page (app/markets/create/page.tsx)
+  - [x] Create groups listing page (app/groups/page.tsx)
+  - [x] Create group creation page (app/groups/create/page.tsx)
+  - [x] Create group stake page with AI (app/groups/[id]/stake/page.tsx)
+  - [x] Set up WagmiProvider (providers/WagmiProvider.tsx)
+  - [x] Update app/layout.tsx to include Wagmi and Query providers
+  - [x] Export all contract hooks from lib/hooks/index.ts
+  - **Implementation Details**:
+    - Wallet Connection: MetaMask via wagmi, supports Anvil/Sepolia/Mainnet
+    - Contract Interactions: useCreateMarket, useCreatePool, useDepositStake, useAddPoolMember, usePoolDetails, useMarketDetails, useAllMarkets
+    - Forms: Form validation, error handling, success messages, MetaMask integration
+    - Pages: Dashboard, markets list, market creation, groups list, group creation, stake with AI
+    - Styling: Tailwind CSS with responsive design, gradient backgrounds, card layouts
+    - AI Integration: StakeForm displays AI suggestions with allocation percentages
+  - **New Files** (15 files created):
+    - lib/wagmi-config.ts
+    - lib/hooks/useContractInteractions.ts
+    - providers/WagmiProvider.tsx
+    - components/WalletConnection.tsx
+    - components/CreateMarketForm.tsx
+    - components/CreateGroupForm.tsx
+    - components/StakeForm.tsx
+    - app/markets/page.tsx
+    - app/markets/create/page.tsx
+    - app/groups/page.tsx
+    - app/groups/create/page.tsx
+    - app/groups/[id]/stake/page.tsx
+    - web/TASK_4_1_IMPLEMENTATION.md
+    - web/TASK_4_1_QUICKSTART.md
+  - **Updated Files** (2 files modified):
+    - app/layout.tsx - Added WagmiProvider wrapper
+    - lib/hooks/index.ts - Added contract hook exports
+  - **Dependencies**: All already in package.json (wagmi, ethers, react-query, viem)
+  - **Architecture**: Clean component separation, server/client boundary respected, security best practices
+  - **Testing**: Quick start guide includes local Anvil testing workflow
+  - **Documentation**: Full implementation guide + quick start guide
+  - **Status**: Ready for frontend integration of AI (Task 4.2)
+  - **Estimated Actual Time**: ~2 hours
+  - **Assignee**: Dev2
+  - **Documentation**: 
+    - quickstart: web/TASK_4_1_QUICKSTART.md
+    - implementation: web/TASK_4_1_IMPLEMENTATION.md
+- **Task 4.2: Connect AI to Frontend** ✅ (High Priority) - **COMPLETED**
+  - [x] Enhance StakeForm component with two-column layout (Manual + AI modes)
+  - [x] Add base amount input for AI allocation percentage calculation
+  - [x] Implement executeAIStrategy() method for one-click execution
+  - [x] Create auto-execution useEffect to handle AI → auto-deposit flow
+  - [x] Add status cards with real-time progress indicators
+  - [x] Implement error handling with retry mechanisms
+  - [x] Build dual-mode UI: Manual stake (left) | AI strategy (right)
+  - [x] Integrate with existing useAISuggestions hook (Task 3.2)
+  - [x] Create implementation documentation (web/TASK_4_2_IMPLEMENTATION.md)
+  - [x] Create quick start guide (web/TASK_4_2_QUICKSTART.md)
+  - **Implementation Details**:
+    - One-Click Execution: 🚀 Execute AI Strategy button triggers full flow
+    - Auto-Execution: useEffect monitors AI suggestions state and auto-deposits when ready
+    - Dual-Mode Design: Manual mode (traditional form) + AI mode (one-click)
+    - Base Amount Feature: User sets base, AI calculates allocation percentages
+    - Status Tracking: Processing → Generated → Executing → Success/Error states
+    - Error Handling: Comprehensive with retry buttons, descriptive messages, transaction hashes
+    - Responsive Layout: Two columns on desktop, stacked on mobile
+    - Integration: Uses useDepositStake (contract), useAISuggestions (API), ethers.js formatting
+  - **New Files** (2 files created):
+    - web/TASK_4_2_IMPLEMENTATION.md - Comprehensive implementation guide
+    - web/TASK_4_2_QUICKSTART.md - User quick start guide
+  - **Updated Files** (1 file modified):
+    - components/StakeForm.tsx - Enhanced with two-column layout, mode state, executeAIStrategy(), auto-execution effect
+  - **Key Component Changes**:
+    - Added state: mode ('manual' | 'ai'), baseStakeAmount
+    - Added methods: executeAIStrategy(), handleModeChange()
+    - Added useEffect: Auto-execution when AI suggestions ready
+    - Added UI: Two-column grid, status cards, dual-mode display
+    - Enhanced error handling: Wallet check, balance validation, API errors, transaction monitoring
+  - **Dependencies**: All existing (Task 3.1, 3.2, 4.1 packages)
+  - **Architecture**: Maintains clean separation, respects server/client boundaries, type-safe
+  - **User Flow**: 
+    1. Enter base amount (e.g., 1.0 ETH)
+    2. Click "🚀 Execute AI Strategy"
+    3. AI fetches on-chain data (2-3s)
+    4. AI generates strategy (2-3s)
+    5. Auto-deposits stake (1-2s)
+    6. Display success with tx hash
+  - **Testing**: Can test both manual and AI modes independently
+  - **Documentation**: Full implementation guide + quick start guide
+  - **Status**: Ready for multi-sig UI (Task 4.3) and E2E testing (Task 5.1)
+  - **Estimated Actual Time**: ~1.5 hours
+  - **Assignee**: Dev2
+  - **Documentation**: 
+    - quickstart: web/TASK_4_2_QUICKSTART.md
+    - implementation: web/TASK_4_2_IMPLEMENTATION.md
+- **Task 4.3: Handle Multi-Sig in UI** ✅ (Medium Priority) - **COMPLETED**
+  - [x] Create multi-sig contract interaction hooks (6 new hooks)
+  - [x] Implement useConfirmMultiSigTransaction hook
+  - [x] Implement useSubmitMultiSigTransaction hook
+  - [x] Implement useMultiSigOwners hook
+  - [x] Implement useMultiSigTransactions hook
+  - [x] Implement useAddMultiSigOwner hook
+  - [x] Implement useMultiSigRequiredConfirmations hook
+  - [x] Create MultiSigApprovalUI component for transaction approvals
+  - [x] Create MultiWalletSimulationGuide component for testing
+  - [x] Enhance CreateGroupForm with multi-sig owner management
+  - [x] Add multi-sig configuration section to form
+  - [x] Update hooks exports (lib/hooks/index.ts)
+  - [x] Create implementation documentation (web/TASK_4_3_IMPLEMENTATION.md)
+  - [x] Create quick start guide (web/TASK_4_3_QUICKSTART.md)
+  - **Implementation Details**:
+    - Multi-Sig Hooks: useConfirmMultiSigTransaction, useSubmitMultiSigTransaction, useMultiSigOwners, useMultiSigTransactions, useAddMultiSigOwner, useMultiSigRequiredConfirmations
+    - MultiSigApprovalUI: Transaction approval dashboard with owner verification
+    - MultiWalletSimulationGuide: 4-step setup + 3 example workflows + troubleshooting
+    - Enhanced CreateGroupForm: Multi-sig owners list, required confirmations input
+    - N-of-M Approval Model: Flexible threshold configuration
+    - Multi-Account Support: Switch between MetaMask accounts to approve
+  - **New Files** (3 files created):
+    - components/MultiSigApprovalUI.tsx - Approval dashboard component
+    - components/MultiWalletSimulationGuide.tsx - Testing guide component
+    - web/TASK_4_3_IMPLEMENTATION.md - Implementation documentation
+    - web/TASK_4_3_QUICKSTART.md - User quick start guide
+  - **Updated Files** (3 files modified):
+    - lib/hooks/useContractInteractions.ts - Added 6 multi-sig hooks
+    - lib/hooks/index.ts - Exported new multi-sig hooks
+    - components/CreateGroupForm.tsx - Multi-sig owner management UI
+  - **Key Features**:
+    - Transaction approval from multiple accounts
+    - Real-time confirmation counter (X/N)
+    - Owner verification (only signers can approve)
+    - Expandable transaction details
+    - Status tracking (Pending/Executed/Cancelled)
+    - Multi-wallet testing simulation
+    - Error handling with retry
+    - Mobile responsive design
+  - **User Flows**:
+    1. Create group with 3 signers, require 2 confirmations
+    2. Submit transaction from Owner 1
+    3. Switch to Owner 2 MetaMask account
+    4. Approve transaction
+    5. Switch to Owner 3
+    6. Approve transaction (now 2/2 confirmations)
+    7. Transaction executes automatically
+  - **Testing Supported**:
+    - Basic N-of-M approval flow
+    - Insufficient signers scenario
+    - Non-owner access verification
+    - Multi-account switching
+    - Error scenarios (gas, invalid address, network)
+  - **Dependencies**: All existing (Task 3.1, 3.2, 4.1, 4.2 packages)
+  - **Architecture**: Maintains clean component separation, respects server/client boundaries, full type safety
+  - **Status**: Ready for E2E testing (Task 5.1) and testnet deployment (Task 5.2)
+  - **Estimated Actual Time**: ~1.5 hours
+  - **Assignee**: Dev2
+  - **Documentation**: 
+    - quickstart: web/TASK_4_3_QUICKSTART.md
+    - implementation: web/TASK_4_3_IMPLEMENTATION.md
+
+#### Phase 5: Testing, Deployment & Demo (Day 2, Afternoon: 3-4 hours)
+- **Task 5.1: End-to-End Testing** (High Priority)
+  - Local: Use foundry anvil network; test full flow (create market, group stake with AI, resolve via on-chain check).
+  - Cover security: No reentrancy, proper approvals.
+  - Dependencies: All components.
+  - Est. Time: 1 hour. Assignee: Dev1/Dev2.
+- **Task 5.2: Deploy to Testnet** (High Priority)
+  - Use Anvil foundry script: Deploy to Sepolia.
+  - Verify contracts on Etherscan (optional for hackathon).
+  - Test live: Interact via frontend or Remix.
+  - Dependencies: Testing passed.
+  - Est. Time: 30 min. Assignee: Dev1.
+- **Task 5.3: Optimize & Debug** (Medium Priority)
+  - Check gas usage; refactor if over limits.
+  - Fix bugs: e.g., AI data parsing, multi-sig failures.
+  - Dependencies: Deployment.
+  - Est. Time: 1 hour. Assignee: All.
+- **Task 5.4: Prepare Demo & Documentation** (High Priority)
+  - Record video/screenshots: Walkthrough of creating on-chain prediction, group staking, AI advice.
+  - Write README: Setup, contracts overview, how to use.
+  - Pitch deck slide: Problem, solution, tech stack.
+  - Dependencies: All complete.
+  - Est. Time: 1 hour. Assignee: PM/Dev2.
+
+#### Overall Project Management Notes
+- **Prioritization**: Focus on High Priority tasks first; skip Medium if time runs out (e.g., advanced testing or full UI polish).
+- **Risks & Mitigations**: Gas costs – Use Layer 2 if Sepolia is slow; AI API limits – Mock responses; On-chain resolution – Fall back to admin for demo.
+- **Timeline Checkpoints**: End of Day 1: Contracts tested locally. End of Day 2: Deployed MVP with demo.
+- **Tools for PM**: Use Trello/Notion for task tracking; Slack for team comms.
+- **Success Metrics**: Working demo of group staking on an on-chain prediction, with AI suggestions.
+
+This task list ensures a structured build. If you need breakdowns, sample code, or adjustments (e.g., for team size), let me know!

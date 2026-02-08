@@ -1,0 +1,35 @@
+{
+  "name": "mpruy",
+  "version": "1.0.0",
+  "description": "Multi-Protocol Risk-Unified Yield Platform - Web3 DeFi Application",
+  "private": true,
+  "workspaces": [
+    "contracts",
+    "web"
+  ],
+  "scripts": {
+    "contracts:build": "cd contracts && forge build",
+    "contracts:test": "cd contracts && forge test",
+    "contracts:deploy": "cd contracts && ./deploy.sh",
+    "contracts:deploy-sepolia": "cd contracts && ./deploy-sepolia.sh",
+    "web:dev": "cd web && npm run dev",
+    "web:build": "cd web && npm run build",
+    "web:start": "cd web && npm run start",
+    "web:lint": "cd web && npm run lint",
+    "dev": "npm run web:dev",
+    "build": "npm run contracts:build && npm run web:build",
+    "test": "npm run contracts:test",
+    "clean": "cd contracts && rm -rf cache broadcast && cd ../web && rm -rf .next out"
+  },
+  "keywords": [
+    "web3",
+    "solidity",
+    "foundry",
+    "ethereum",
+    "defi",
+    "nextjs",
+    "wagmi"
+  ],
+  "author": "",
+  "license": "MIT"
+}
