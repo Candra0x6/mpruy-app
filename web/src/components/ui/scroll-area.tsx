@@ -1,3 +1,11 @@
+/**
+ * #file:ui
+ * ScrollArea Component
+ * 
+ * Scrollable area component built on Radix UI.
+ * Provides styled scrollbars and viewport management.
+ */
+
 "use client"
 
 import * as React from "react"
@@ -40,9 +48,9 @@ function ScrollBar({
       className={cn(
         "flex touch-none p-px transition-colors select-none",
         orientation === "vertical" &&
-          "h-full w-2.5 border-l border-l-transparent",
+        "h-full w-2.5 border-l border-l-transparent",
         orientation === "horizontal" &&
-          "h-2.5 flex-col border-t border-t-transparent",
+        "h-2.5 flex-col border-t border-t-transparent",
         className
       )}
       {...props}

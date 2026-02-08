@@ -1,3 +1,11 @@
+/**
+ * #file:ui
+ * Toggle Component
+ * 
+ * Toggle button component built on Radix UI.
+ * Supports on/off states with multiple style variants and sizes.
+ */
+
 "use client"
 
 import * as React from "react"

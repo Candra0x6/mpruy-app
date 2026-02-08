@@ -1,3 +1,11 @@
+/**
+ * #file:ui
+ * Separator Component
+ * 
+ * Visual divider component based on Radix UI.
+ * Supports horizontal and vertical orientations.
+ */
+
 "use client"
 
 import * as React from "react"
