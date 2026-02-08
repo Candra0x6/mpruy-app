@@ -1,3 +1,12 @@
+/**
+ * #file:group-pool
+ * StakeInMarketForm Component
+ * 
+ * Enables group pool members to stake on prediction market outcomes.
+ * Supports staking on binary outcomes (yes/no), manages stake amounts,
+ * and handles transaction submission with status tracking.
+ */
+
 'use client'
 
 import { useState } from 'react'
