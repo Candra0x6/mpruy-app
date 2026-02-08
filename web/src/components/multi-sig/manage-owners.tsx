@@ -1,3 +1,12 @@
+/**
+ * #file:multi-sig
+ * ManageOwners Component
+ * 
+ * Manages the owners/signers of a multi-signature wallet.
+ * Displays total owner count, signer details, and lists all wallet owners.
+ * Provides governance oversight for multi-sig wallet operations.
+ */
+
 'use client'
 
 import { useEffect, useState } from 'react'
