@@ -1,3 +1,11 @@
+/**
+ * #file:ui
+ * ContextMenu Component
+ * 
+ * Right-click context menu component built on Radix UI.
+ * Provides accessible menu items with checkbox and radio support.
+ */
+
 "use client"
 
 import * as React from "react"

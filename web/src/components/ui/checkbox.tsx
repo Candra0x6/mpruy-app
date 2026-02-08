@@ -1,3 +1,11 @@
+/**
+ * #file:ui
+ * Checkbox Component
+ * 
+ * Accessible checkbox input component built on Radix UI.
+ * Supports checked, unchecked, and indeterminate states.
+ */
+
 "use client"
 
 import * as React from "react"

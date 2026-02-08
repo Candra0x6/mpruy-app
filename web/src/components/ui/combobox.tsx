@@ -1,3 +1,11 @@
+/**
+ * #file:ui
+ * Combobox Component
+ * 
+ * Searchable dropdown component with Base UI.
+ * Combines input field with custom selection list for autocomplete functionality.
+ */
+
 "use client"
 
 import * as React from "react"

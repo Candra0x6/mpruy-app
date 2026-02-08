@@ -1,3 +1,11 @@
+/**
+ * #file:ui
+ * Collapsible Component
+ * 
+ * Expandable/collapsible content component based on Radix UI.
+ * Provides trigger and content areas for toggling visibility.
+ */
+
 "use client"
 
 import { Collapsible as CollapsiblePrimitive } from "radix-ui"
