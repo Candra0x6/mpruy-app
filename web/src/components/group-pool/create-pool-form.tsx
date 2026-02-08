@@ -1,3 +1,12 @@
+/**
+ * #file:group-pool
+ * CreatePoolForm Component
+ * 
+ * Provides a form interface for creating a new group pool.
+ * Handles pool name, multi-signature wallet address, and token address inputs.
+ * Manages form submission and displays loading/success/error states.
+ */
+
 'use client'
 
 import { useState } from 'react'
