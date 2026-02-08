@@ -1,3 +1,12 @@
+/**
+ * #file:multi-sig
+ * SubmitTransactionForm Component
+ * 
+ * Form for submitting new transactions to the multi-signature wallet.
+ * Supports both ETH transfers and contract interactions with customizable data.
+ * Provides separate tabs for ETH and contract transaction modes.
+ */
+
 'use client'
 
 import { useState } from 'react'
