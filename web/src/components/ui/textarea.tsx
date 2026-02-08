@@ -1,3 +1,11 @@
+/**
+ * #file:ui
+ * Textarea Component
+ * 
+ * Multi-line text input component with validation support.
+ * Supports error states and disabled states.
+ */
+
 import * as React from "react"
 
 import { cn } from "@/lib/utils"

@@ -1,3 +1,11 @@
+/**
+ * #file:ui
+ * Tabs Component
+ * 
+ * Tabbed interface component built on Radix UI.
+ * Supports horizontal and vertical tab layouts with content sections.
+ */
+
 "use client"
 
 import * as React from "react"

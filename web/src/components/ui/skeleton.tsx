@@ -1,3 +1,11 @@
+/**
+ * #file:ui
+ * Skeleton Component
+ * 
+ * Placeholder skeleton loader component.
+ * Provides animated pulsing effect for loading states.
+ */
+
 import { cn } from "@/lib/utils"
 
 function Skeleton({ className, ...props }: React.ComponentProps<"div">) {

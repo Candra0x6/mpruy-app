@@ -1,3 +1,11 @@
+/**
+ * #file:ui
+ * Sonner Component
+ * 
+ * Toast notification component wrapper using Sonner library.
+ * Provides themed toast messages with custom icons.
+ */
+
 "use client"
 
 import {

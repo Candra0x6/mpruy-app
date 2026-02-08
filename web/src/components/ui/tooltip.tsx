@@ -1,3 +1,11 @@
+/**
+ * #file:ui
+ * Tooltip Component
+ * 
+ * Tooltip component built on Radix UI.
+ * Displays text on hover with customizable delay and positioning.
+ */
+
 "use client"
 
 import * as React from "react"

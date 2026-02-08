@@ -1,3 +1,11 @@
+/**
+ * #file:ui
+ * Switch Component
+ * 
+ * Toggle switch component based on Radix UI.
+ * Supports checked/unchecked states with size variants.
+ */
+
 "use client"
 
 import * as React from "react"
