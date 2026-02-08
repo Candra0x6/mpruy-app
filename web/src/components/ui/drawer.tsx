@@ -1,3 +1,11 @@
+/**
+ * #file:ui
+ * Drawer Component
+ * 
+ * Sliding drawer/sheet component using Vaul library.
+ * Provides off-canvas menu functionality for mobile and desktop.
+ */
+
 "use client"
 
 import * as React from "react"

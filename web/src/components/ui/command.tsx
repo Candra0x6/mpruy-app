@@ -1,3 +1,11 @@
+/**
+ * #file:ui
+ * Command Component
+ * 
+ * Command palette/search component using cmdk library.
+ * Provides keyboard navigation and search filtering functionality.
+ */
+
 "use client"
 
 import * as React from "react"

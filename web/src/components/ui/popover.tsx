@@ -1,3 +1,11 @@
+/**
+ * #file:ui
+ * Popover Component
+ * 
+ * Floating popover component built on Radix UI.
+ * Provides positioning, portal rendering, and dismiss functionality.
+ */
+
 "use client"
 
 import * as React from "react"

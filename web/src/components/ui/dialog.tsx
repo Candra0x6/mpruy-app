@@ -1,3 +1,11 @@
+/**
+ * #file:ui
+ * Dialog Component
+ * 
+ * Modal dialog component with overlay and close button.
+ * Built on Radix UI with full accessibility support.
+ */
+
 "use client"
 
 import * as React from "react"
