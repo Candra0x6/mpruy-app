@@ -1,3 +1,12 @@
+/**
+ * #file:group-pool
+ * ManageMembersForm Component
+ * 
+ * Enables management of group pool members.
+ * Allows adding new members to the pool, displays member count,
+ * and handles member-related transactions and status updates.
+ */
+
 'use client'
 
 import React, { useState } from 'react'
