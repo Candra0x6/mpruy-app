@@ -1,3 +1,11 @@
+/**
+ * #file:ui
+ * Input Component
+ * 
+ * Standard text input field component with styling.
+ * Supports various input types and validation states.
+ */
+
 import * as React from "react"
 
 import { cn } from "@/lib/utils"

@@ -1,3 +1,11 @@
+/**
+ * #file:ui
+ * Label Component
+ * 
+ * Form label component based on Radix UI.
+ * Supports disabled state and semantic HTML structure.
+ */
+
 "use client"
 
 import * as React from "react"

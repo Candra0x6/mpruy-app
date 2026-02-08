@@ -1,3 +1,11 @@
+/**
+ * #file:ui
+ * Item Component
+ * 
+ * List item component with separator and grouping support.
+ * Provides accessible list structure with customizable styling.
+ */
+
 import * as React from "react"
 import { cva, type VariantProps } from "class-variance-authority"
 import { Slot } from "radix-ui"

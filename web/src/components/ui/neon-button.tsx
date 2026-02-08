@@ -1,3 +1,11 @@
+/**
+ * #file:ui
+ * NeonButton Component
+ * 
+ * Custom neon-style button with glow effects.
+ * Supports multiple variants and sizes with motion animations.
+ */
+
 import React from 'react';
 import { motion } from 'framer-motion';
 
