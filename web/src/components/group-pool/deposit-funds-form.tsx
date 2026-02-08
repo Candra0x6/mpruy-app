@@ -1,3 +1,12 @@
+/**
+ * #file:group-pool
+ * DepositFundsForm Component
+ * 
+ * Handles depositing funds (ETH or tokens) into a group pool.
+ * Provides tab interface for selecting deposit type and manages
+ * pool data loading, form submission, and transaction status.
+ */
+
 'use client'
 
 import React, { useState } from 'react'
