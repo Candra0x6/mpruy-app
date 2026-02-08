@@ -1,3 +1,12 @@
+/**
+ * #file:prediction-market
+ * ActiveMarkets Component
+ * 
+ * Displays currently active prediction markets.
+ * Allows users to view market details, search for specific markets,
+ * and place stakes on prediction outcomes (yes/no binary choices).
+ */
+
 'use client'
 
 import { useState } from 'react'
