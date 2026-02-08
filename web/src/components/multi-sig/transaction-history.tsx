@@ -1,3 +1,12 @@
+/**
+ * #file:multi-sig
+ * TransactionHistory Component
+ * 
+ * Displays the transaction history of a multi-signature wallet.
+ * Provides filtering by status (executed, failed, pending) and search functionality.
+ * Shows transaction details including recipient, value, and confirmation status.
+ */
+
 'use client'
 
 import React, { useState } from 'react'
