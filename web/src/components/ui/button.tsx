@@ -1,3 +1,11 @@
+/**
+ * #file:ui
+ * Button Component
+ * 
+ * Versatile button component with multiple variants and sizes.
+ * Supports default, destructive, outline, secondary, ghost, and link variants.
+ */
+
 import * as React from "react"
 import { cva, type VariantProps } from "class-variance-authority"
 import { Slot } from "radix-ui"

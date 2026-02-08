@@ -1,3 +1,11 @@
+/**
+ * #file:ui
+ * Card Component
+ * 
+ * Container component for content grouping and presentation.
+ * Provides header, title, description, and content sections.
+ */
+
 import * as React from "react"
 
 import { cn } from "@/lib/utils"

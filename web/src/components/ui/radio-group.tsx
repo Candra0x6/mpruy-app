@@ -1,3 +1,11 @@
+/**
+ * #file:ui
+ * RadioGroup Component
+ * 
+ * Radio button group component built on Radix UI.
+ * Supports single selection from multiple options.
+ */
+
 "use client"
 
 import * as React from "react"

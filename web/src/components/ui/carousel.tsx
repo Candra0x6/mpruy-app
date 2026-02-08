@@ -1,3 +1,11 @@
+/**
+ * #file:ui
+ * Carousel Component
+ * 
+ * Image/content carousel component using Embla library.
+ * Supports horizontal/vertical layouts with navigation controls.
+ */
+
 "use client"
 
 import * as React from "react"

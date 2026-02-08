@@ -1,3 +1,11 @@
+/**
+ * #file:ui
+ * Avatar Component
+ * 
+ * User avatar display component with image and fallback support.
+ * Supports different sizes and responsive image handling.
+ */
+
 "use client"
 
 import * as React from "react"
