@@ -1,3 +1,12 @@
+/**
+ * #file:multi-sig
+ * WalletDashboard Component
+ * 
+ * Dashboard providing overview of multi-signature wallet.
+ * Displays key metrics including total assets, owner count, and transaction details.
+ * Serves as the main entry point for multi-sig wallet operations.
+ */
+
 'use client'
 
 import { useEffect, useState } from 'react'
