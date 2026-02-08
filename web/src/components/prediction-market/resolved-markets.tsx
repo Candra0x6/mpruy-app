@@ -1,3 +1,12 @@
+/**
+ * #file:prediction-market
+ * ResolvedMarkets Component
+ * 
+ * Displays prediction markets that have been resolved.
+ * Allows users to view winning outcomes and withdraw winnings from successful stakes.
+ * Provides search functionality to find specific resolved markets.
+ */
+
 'use client'
 
 import { useState } from 'react'

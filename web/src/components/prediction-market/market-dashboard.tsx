@@ -1,3 +1,12 @@
+/**
+ * #file:prediction-market
+ * MarketDashboard Component
+ * 
+ * Dashboard providing overview of all prediction markets.
+ * Displays key metrics including total active markets and market statistics.
+ * Enables users to select markets for detailed interaction.
+ */
+
 'use client'
 
 import { usePredictionMarket, PredictionOutcome } from '@/hooks/usePredictionMarket'

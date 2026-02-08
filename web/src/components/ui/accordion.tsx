@@ -1,3 +1,11 @@
+/**
+ * #file:ui
+ * Accordion Component
+ * 
+ * Collapsible accordion component built on Radix UI.
+ * Allows expandable/collapsible sections with header and content areas.
+ */
+
 "use client"
 
 import * as React from "react"

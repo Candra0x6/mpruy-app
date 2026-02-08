@@ -1,3 +1,11 @@
+/**
+ * #file:ui
+ * AlertDialog Component
+ * 
+ * Modal dialog component for alerts and confirmations.
+ * Built on Radix UI with accessible dialog patterns.
+ */
+
 "use client"
 
 import * as React from "react"

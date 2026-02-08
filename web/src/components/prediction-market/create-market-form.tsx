@@ -1,3 +1,12 @@
+/**
+ * #file:prediction-market
+ * CreateMarketForm Component
+ * 
+ * Form for creating new prediction markets.
+ * Handles market description, resolution timeframe, and outcome conditions.
+ * Calculates resolution block numbers and submits market creation transactions.
+ */
+
 'use client'
 
 import { useState } from 'react'

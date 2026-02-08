@@ -1,3 +1,12 @@
+/**
+ * #file:prediction-market
+ * MyStakes Component
+ * 
+ * Displays user's prediction market stakes and positions.
+ * Provides tabs for filtering stakes (all, pending resolution, settled).
+ * Shows detailed stake information including amounts and outcomes.
+ */
+
 'use client'
 
 import { usePredictionMarket } from '@/hooks/usePredictionMarket'

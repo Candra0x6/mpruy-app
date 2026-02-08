@@ -1,3 +1,11 @@
+/**
+ * #file:ui
+ * Badge Component
+ * 
+ * Small status indicator component with multiple style variants.
+ * Supports default, secondary, destructive, and outline variants.
+ */
+
 import * as React from "react"
 import { cva, type VariantProps } from "class-variance-authority"
 
