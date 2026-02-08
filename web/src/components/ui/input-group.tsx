@@ -1,3 +1,11 @@
+/**
+ * #file:ui
+ * InputGroup Component
+ * 
+ * Input wrapper component that allows addons and buttons.
+ * Supports prefixes, suffixes, and multiple configuration options.
+ */
+
 "use client"
 
 import * as React from "react"

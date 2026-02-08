@@ -1,3 +1,11 @@
+/**
+ * #file:ui
+ * Progress Component
+ * 
+ * Progress bar component based on Radix UI.
+ * Displays progress with animated indicators.
+ */
+
 "use client"
 
 import * as React from "react"

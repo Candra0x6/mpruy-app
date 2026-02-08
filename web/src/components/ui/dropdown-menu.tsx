@@ -1,3 +1,11 @@
+/**
+ * #file:ui
+ * DropdownMenu Component
+ * 
+ * Dropdown menu component built on Radix UI.
+ * Supports menu items, separators, checkboxes, and radio groups.
+ */
+
 "use client"
 
 import * as React from "react"

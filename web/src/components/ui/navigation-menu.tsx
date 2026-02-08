@@ -1,3 +1,11 @@
+/**
+ * #file:ui
+ * NavigationMenu Component
+ * 
+ * Navigation menu component built on Radix UI.
+ * Provides keyboard navigation and viewport support for nested menus.
+ */
+
 import * as React from "react"
 import { cva } from "class-variance-authority"
 import { ChevronDownIcon } from "lucide-react"

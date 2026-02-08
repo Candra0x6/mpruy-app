@@ -1,3 +1,11 @@
+/**
+ * #file:ui
+ * Pagination Component
+ * 
+ * Pagination navigation component with page and ellipsis support.
+ * Provides accessible navigation between multiple pages.
+ */
+
 import * as React from "react"
 import {
   ChevronLeftIcon,

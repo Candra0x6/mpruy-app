@@ -1,3 +1,11 @@
+/**
+ * #file:ui
+ * GlassCard Component
+ * 
+ * Custom glass morphism card component with gradient border.
+ * Features hover effects, backdrop blur, and motion animations.
+ */
+
 import React from 'react';
 import { motion } from 'framer-motion';
 

@@ -1,3 +1,11 @@
+/**
+ * #file:ui
+ * Field Component
+ * 
+ * Form field container component with label and state management.
+ * Provides styling for field groups, legends, and error states.
+ */
+
 "use client"
 
 import { useMemo } from "react"

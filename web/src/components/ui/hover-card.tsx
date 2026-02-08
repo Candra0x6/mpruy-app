@@ -1,3 +1,11 @@
+/**
+ * #file:ui
+ * HoverCard Component
+ * 
+ * Hover-triggered popover component based on Radix UI.
+ * Displays content when hovering over a trigger element.
+ */
+
 "use client"
 
 import * as React from "react"

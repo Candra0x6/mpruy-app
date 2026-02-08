@@ -1,3 +1,11 @@
+/**
+ * #file:ui
+ * Form Component
+ * 
+ * React Hook Form integration wrapper component.
+ * Provides form context and field management utilities.
+ */
+
 "use client"
 
 import * as React from "react"
